@@ -1,5 +1,29 @@
 # Dell IP / DNS Info
 
+## /etc/netplan/00-installer-config.yaml
+
+```
+# This is the network config written by 'subiquity'
+network:
+  ethernets:
+    eno1:
+      addresses: [192.168.1.193/24]
+      routes:
+        - to: default
+          via: 192.168.1.254
+      nameservers:
+        addresses: [8.8.8.8,8.8.4.4]
+  version: 2
+
+```
+
+*** Remember to apply the changes: ***
+
+```
+$ sudo netplan apply
+```
+
+
 ## Get IP address: ip a
 
 ```
@@ -29,28 +53,4 @@ default via 192.168.1.254 dev eno1 proto static
 default via 192.168.1.254 dev eno1 proto dhcp src 192.168.1.193 metric 100 
 192.168.1.0/24 dev eno1 proto kernel scope link src 192.168.1.193 metric 100 
 192.168.1.254 dev eno1 proto dhcp scope link src 192.168.1.193 metric 100  
-```
-
-
-## /etc/netplan/00-installer-config.yaml
-
-```
-# This is the network config written by 'subiquity'
-network:
-  ethernets:
-    eno1:
-      addresses: [192.168.1.193/24]
-      routes:
-        - to: default
-          via: 192.168.1.254
-      nameservers:
-        addresses: [8.8.8.8,8.8.4.4]
-  version: 2
-
-```
-
-*** Remember to apply the changes: ***
-
-```
-$ sudo netplan apply
 ```
