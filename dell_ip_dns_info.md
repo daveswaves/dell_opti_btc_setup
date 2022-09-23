@@ -1,5 +1,14 @@
 # Dell IP / DNS Info
 
+```
+When installing Linux Ubuntu Server 23.04 LTS onto the Dell Optiplex 9020M (i5 processor / 8GB RAM)
+it defaults to a dynamic IP address. This results in losing the abilty to access the server remotely via SSH.
+
+The following demonstrates modifying the '00-installer-config.yaml' file to set a static IP address.
+*** NOTE: If the routes address is incorrect, the server can still be accessed via SSH, but is unable to
+connect to the internet.
+```
+
 ## /etc/netplan/00-installer-config.yaml
 
 ```
