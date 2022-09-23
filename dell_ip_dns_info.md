@@ -3,9 +3,7 @@
 ```
 When installing Linux Ubuntu Server 23.04 LTS onto the Dell Optiplex 9020M (i5 processor / 8GB RAM) it defaults to a
 dynamic IP address. This can result in a new IP address being assigned when the server reboots. You are then unable
-to access the server remotely via SSH.
-
-The solution is to set up a static IP address.
+to access the server remotely via SSH. The solution is to set up a static IP address.
 
 The following demonstrates modifying the '00-installer-config.yaml' file to set a static IP address.
 *** NOTE: If the routes address is incorrect, the server can still be accessed via SSH, but is unable to connect
